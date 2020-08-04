@@ -1,6 +1,9 @@
 package tim_utils_http
 
-import "net/http"
+import (
+	"io/ioutil"
+	"net/http"
+)
 
 func SendGetMsg(iMicroServiceName string,
 	iPort string,
@@ -30,12 +33,11 @@ func SendGetMsg(iMicroServiceName string,
 	}
 
 	defer resp.Body.Close()
-	/*
-		eResultAsByteArray, err = ioutil.ReadAll(resp.Body)
-		if err != nil {
-			eException.Occured = true
-			eException.ErrTxt = "Technical error: read response body failed:" + err.Error()
-		}
-	*/
+	eResultAsByteArray, err = ioutil.ReadAll(resp.Body)
+	if err != nil {
+		eException.Occured = true
+		eException.ErrTxt = "Technical error: read response body failed:" + err.Error()
+	}
+
 	return
 }
