@@ -2,11 +2,6 @@ package tim_utils_http
 
 import "net/http"
 
-type ExceptionStruct struct {
-	Occured bool
-	ErrTxt  string
-}
-
 func SendGetMsg(iMicroServiceName string,
 	iPort string,
 	iServicePath string,
