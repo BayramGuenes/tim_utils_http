@@ -14,6 +14,7 @@ func SendPostMsg(iMicroServiceName string,
 	eException = ExceptionStruct{}
 
 	serviceadr := "http://" + iMicroServiceName + ":" + iPort + iServicePath
+	//println("serviceadr:" + serviceadr)
 	println("serviceadr:" + serviceadr)
 
 	eResultAsByteArray = []byte{}
